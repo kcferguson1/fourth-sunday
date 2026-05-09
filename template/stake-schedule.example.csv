@@ -1,0 +1,53 @@
+TAB: Schedule
+Year,Date,Ward,Speaker,Topic,Status,Notes,Locked
+2026,2026-01-25,Sample Ward 1,Sample Speaker A,,pending,,FALSE
+2026,2026-01-25,Sample Ward 2,Sample Speaker B,,pending,,FALSE
+2026,2026-01-25,Sample Ward 3,Sample Speaker C,,pending,,FALSE
+2026,2026-02-22,Sample Ward 1,Sample Speaker B,,pending,,FALSE
+2026,2026-02-22,Sample Ward 2,Sample Speaker C,,pending,,FALSE
+2026,2026-02-22,Sample Ward 3,Sample Speaker D,,pending,,FALSE
+2026,2026-03-29,Sample Ward 1,Sample Speaker C,,pending,,FALSE
+2026,2026-06-28,Sample Ward 2,,Ward Conference,skipped,Ward Conference,FALSE
+
+TAB: Speakers
+Name,Email,Phone,Calling,Active,Notes
+Sample Speaker A,speaker.a@example.com,555-0101,First Counselor,TRUE,
+Sample Speaker B,speaker.b@example.com,555-0102,Second Counselor,TRUE,
+Sample Speaker C,speaker.c@example.com,555-0103,High Councilor,TRUE,
+Sample Speaker D,speaker.d@example.com,555-0104,High Councilor,TRUE,
+Sample Speaker E,speaker.e@example.com,555-0105,High Councilor,TRUE,
+Sample Speaker F,speaker.f@example.com,555-0106,High Councilor,FALSE,On leave
+
+TAB: Wards
+Name,Building,Meeting Time,Bishop Name,Bishop Email,Sort Order
+Sample Ward 1,North Building,9:00 AM,Bishop Sample One,bishop1@example.com,1
+Sample Ward 2,North Building,11:00 AM,Bishop Sample Two,bishop2@example.com,2
+Sample Ward 3,South Building,1:00 PM,Bishop Sample Three,bishop3@example.com,3
+
+TAB: Topics
+Title,Source,Scripture Refs,Notes,Last Used Date
+The Restoration of the Gospel,Come Follow Me 2026 Week 1,Doctrine and Covenants 1,,
+The Living Christ,General Conference Oct 2025,,Used as opening topic,
+Faith in Jesus Christ,Come Follow Me 2026 Week 2,Hebrews 11,,
+The Power of the Book of Mormon,General Conference Apr 2025,1 Nephi 1,,
+Ministering to One Another,Come Follow Me 2026 Week 3,Mosiah 18:8-9,,
+
+TAB: Settings
+Key,Value
+Stake Name,Sample Stake
+Exec Sec Name,Your Name Here
+Exec Sec Email,your.email@example.com
+Reminder Days,21
+Time Zone,America/Denver
+Calendar Sync,FALSE
+Default Language,en
+Rollover Algorithm,latin_square
+Swap Form URL,
+
+TAB: Log
+Timestamp,User,Action,Field,Old Value,New Value
+
+TAB: Overrides
+Date,Ward,Label
+2026-06-28,Sample Ward 2,Ward Conference
+2026-09-27,*,Fast Sunday

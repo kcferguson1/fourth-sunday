@@ -1,0 +1,61 @@
+{
+  "_comment": "This file documents the Settings tab shape as JSON for reference. It is not read by the script — all configuration lives in the Google Sheet Settings tab.",
+  "settings": {
+    "Stake Name": "Mountain View Stake",
+    "Exec Sec Name": "Kelly Ferguson",
+    "Exec Sec Email": "exec.sec@example.com",
+    "Reminder Days": 21,
+    "Time Zone": "America/Denver",
+    "Calendar Sync": false,
+    "Default Language": "en",
+    "Rollover Algorithm": "latin_square",
+    "Swap Form URL": "https://forms.gle/EXAMPLE_FORM_ID"
+  },
+  "wards": [
+    {
+      "Name": "First Ward",
+      "Building": "North Building",
+      "Meeting Time": "9:00 AM",
+      "Bishop Name": "Bishop Adams",
+      "Bishop Email": "bishop.adams@example.com",
+      "Sort Order": 1
+    },
+    {
+      "Name": "Second Ward",
+      "Building": "North Building",
+      "Meeting Time": "11:00 AM",
+      "Bishop Name": "Bishop Brown",
+      "Bishop Email": "bishop.brown@example.com",
+      "Sort Order": 2
+    },
+    {
+      "Name": "Third Ward",
+      "Building": "South Building",
+      "Meeting Time": "9:00 AM",
+      "Bishop Name": "Bishop Clark",
+      "Bishop Email": "bishop.clark@example.com",
+      "Sort Order": 3
+    },
+    {
+      "Name": "Fourth Ward",
+      "Building": "South Building",
+      "Meeting Time": "11:00 AM",
+      "Bishop Name": "Bishop Davis",
+      "Bishop Email": "bishop.davis@example.com",
+      "Sort Order": 4
+    }
+  ],
+  "speakers": [
+    { "Name": "Smith, John",  "Calling": "Stake President",           "Active": true  },
+    { "Name": "Jones, David", "Calling": "First Counselor",           "Active": true  },
+    { "Name": "Lee, Michael", "Calling": "Second Counselor",          "Active": true  },
+    { "Name": "Brown, James", "Calling": "High Councilor",            "Active": true  },
+    { "Name": "Kim, Robert",  "Calling": "High Councilor",            "Active": true  },
+    { "Name": "Park, Kevin",  "Calling": "High Councilor",            "Active": false, "_note": "Recently released" }
+  ],
+  "overrides_examples": [
+    { "Date": "2026-06-28", "Ward": "First Ward",  "Label": "Ward Conference"       },
+    { "Date": "2026-08-23", "Ward": "Second Ward", "Label": "Missionary Homecoming" },
+    { "Date": "2026-09-27", "Ward": "*",           "Label": "Fast Sunday"           }
+  ]
+}
