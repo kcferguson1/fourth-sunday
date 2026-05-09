@@ -2,7 +2,7 @@
 
 Everything you need to get Fourth Sunday running for your stake. No technical background required.
 
-Total time: about 20 minutes.
+Total time: about 15 minutes.
 
 ---
 
@@ -179,87 +179,15 @@ If the email doesn't arrive:
 
 ---
 
-## Step 8 — Schedule automatic reminders and digest (30 seconds)
+## Step 8 — Set up the swap request form (optional, 1 minute)
 
-**Fourth Sunday → First-time Setup**
+If you want speakers to be able to request swaps without calling you:
 
-That's it. The setup runs for about 15 seconds and then shows a confirmation message. It schedules:
-- A daily check at 6am that sends reminder emails to speakers 21 days before their assignment
-- A Monday morning digest emailed to you with the next 60 days of assignments
+**Fourth Sunday → Set Up Swap Form**
 
-*Note: If you already clicked First-time Setup back in Step 5 during authorization, you can skip this step — it's already done.*
+The script creates the form, adds all the questions, links it to your sheet, and saves the form URL to Settings automatically. When it's done, a message shows you the form URL — share that link with your speakers.
 
----
-
-## Step 9 — Set up the swap request form (optional, 10 minutes)
-
-If you want speakers to be able to request swaps without calling you, this form gives them a way to do it. The script notifies you automatically when a request comes in.
-
-### Create the form
-
-1. Go to [forms.google.com](https://forms.google.com)
-2. Click the blank `+` to create a new form
-3. Name it: `Fourth Sunday Swap Request`
-4. Delete the default "Untitled Question"
-
-Now add these four questions. The names must match exactly — the script reads them by name:
-
-**Question 1:**
-- Click "Add question" (the `+` button in the floating toolbar on the right)
-- Question title: `Your name`
-- Answer type: **Short answer**
-- Toggle "Required" on
-
-**Question 2:**
-- Add question
-- Title: `Your assignment date`
-- Answer type: **Date**
-- Toggle "Required" on
-
-**Question 3:**
-- Add question
-- Title: `Swap with`
-- Answer type: **Short answer** (they'll type the other speaker's name)
-- Toggle "Required" on
-
-**Question 4:**
-- Add question
-- Title: `Reason`
-- Answer type: **Paragraph**
-- Leave "Required" off
-
-### Link the form to your sheet
-
-1. In the form editor: click the **Responses** tab at the top
-2. Click the Google Sheets icon (green spreadsheet icon — "Link to Sheets")
-3. Select **"Select existing spreadsheet"**
-4. Find and select your schedule sheet
-5. Click **Create** — the form responses will now go into a "Form Responses 1" tab in your sheet
-
-### Add the trigger
-
-1. In your schedule sheet: **Extensions → Apps Script**
-2. Click the **clock icon** (Triggers)
-3. Click **+ Add Trigger**:
-
-   | Field | Select |
-   |-------|--------|
-   | Choose which function to run | `onSwapFormSubmit` |
-   | Choose which deployment should run | `Head` |
-   | Select event source | `From spreadsheet` |
-   | Select event type | `On form submit` |
-
-4. Click **Save**
-
-### Copy the form link into Settings
-
-1. In the form editor: click **Send** (top-right)
-2. Click the link icon
-3. Copy the short URL (click "Shorten URL" if you want a shorter one)
-4. Go back to your sheet, click the **Settings** tab
-5. Find the row with Key = `Swap Form URL` and paste the link in the Value column
-
-Now when a speaker submits the form, you'll receive an email. To approve a swap: **Fourth Sunday → Approve Pending Swaps**.
+When a speaker submits the form, you'll receive an email. To approve a swap: **Fourth Sunday → Approve Pending Swaps**.
 
 ---
 
@@ -270,7 +198,7 @@ The schedule is live, reminders will go out automatically, and you'll get a Mond
 A few things to do as the year goes on:
 
 - **Assign topics**: When the stake presidency assigns a topic, go to the Schedule tab and type the topic title in the Topic column. Make sure it matches a title in the Topics tab exactly — that's how the script finds the scripture references for the reminder email.
-- **Lock confirmed rows**: Once you're happy with an assignment and have notified the speaker, set Locked = TRUE so it survives any future rollover re-runs.
+- **Lock confirmed rows**: After reminders go out, click **Fourth Sunday → Lock Confirmed Rows** to protect those rows from being overwritten on the next rollover. Or set Locked = TRUE manually on individual rows.
 - **Mark completed assignments**: After a date passes, you can manually set Status = `complete` for those rows to keep the digest clean.
 - **Update speakers**: If someone is released or called, go to the Speakers tab and set Active = FALSE. They'll be excluded from the next rollover.
 
