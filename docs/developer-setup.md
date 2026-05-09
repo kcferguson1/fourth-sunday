@@ -2,7 +2,7 @@
 
 This guide is for the person who owns the repo — the one who creates and maintains the published template sheet that everyone else copies. You do this once. After that, the end-user setup guide handles everything.
 
-Estimated time: 20–30 minutes.
+Estimated time: 15–20 minutes.
 
 ---
 
@@ -10,8 +10,8 @@ Estimated time: 20–30 minutes.
 
 Google Apps Script code can't be distributed as a file download — it has to live inside a Google Sheet. The path is:
 
-1. Push the code from this repo into a new Google Sheet using a script
-2. Click one menu item in the sheet that creates all the tabs, seeds topics, and installs triggers automatically
+1. Run one shell script that creates the sheet, pushes the code, and opens it in your browser
+2. Click one menu item in the sheet that creates all tabs, seeds topics, and installs triggers
 3. Test it with real stake data
 4. Make a clean copy with sample-only data and share it publicly
 5. Update the README with the public template link
@@ -28,46 +28,25 @@ Google Apps Script code can't be distributed as a file download — it has to li
 4. Open Terminal (Mac: press `Command + Space`, type `Terminal`, press Enter)
 5. Type `node --version` and press Enter. You should see something like `v20.x.x`.
 
-### Step 2 — Create a blank Google Sheet
+### Step 2 — Run the setup script
 
-1. Go to [sheets.google.com](https://sheets.google.com) and click the blank `+`
-2. Name it: `Fourth Sunday — Working Copy`
-
-That's all. **Do not create any tabs.** The setup script will do that.
-
-### Step 3 — Get the Script ID
-
-1. In your new sheet: click **Extensions → Apps Script**
-2. A new tab opens — look at the URL in your browser:
-   ```
-   https://script.google.com/home/projects/  1BxA...LONG_STRING.../edit
-   ```
-3. The Script ID is the long string between `/projects/` and `/edit`. Copy it.
-
-### Step 4 — Run the setup script
-
-In Terminal, navigate to the repo:
+In Terminal:
 
 ```
 cd "/Users/YOUR_USERNAME/Desktop/Claude Code/stake_speakers_google"
-```
-
-Then run:
-
-```
 bash scripts/setup.sh
 ```
 
 The script will:
-- Check that Node.js and clasp are installed (installs clasp if missing)
+- Install clasp if it's not already installed
 - Ask you to log into your Google account in a browser (one-time)
-- Prompt you to paste your Script ID
-- Create `src/.clasp.json` automatically
-- Push all the code to your sheet
+- Create a new Google Sheet automatically — **no copy-paste of IDs needed**
+- Push all the code to that sheet
+- Open the sheet in your browser
 
-When it finishes, you'll see instructions on screen for what to do next.
+When it finishes, you'll see next steps printed on screen.
 
-### Step 5 — Run First-time Setup in the sheet
+### Step 3 — Run First-time Setup in the sheet
 
 1. Go back to your Google Sheet and reload the page (`Cmd+R`)
 2. You should see a **Fourth Sunday** menu in the menu bar
@@ -130,8 +109,12 @@ In your working sheet: **File → Make a copy** → name it `Fourth Sunday — P
 
 ### Step 11 — Clean out the real data
 
-In the public template copy:
+In the public template copy, open **Extensions → Apps Script** and run `preparePublicTemplate()` from the function dropdown. It will:
+- Replace your real speakers and wards with sample placeholder rows
+- Clear the Schedule and Log tabs
+- Clear your personal Settings values
 
+Alternatively, do it manually:
 1. **Speakers tab**: Delete all your real rows. Add 3–4 placeholder rows with names like `Sample Speaker A` and emails like `speaker.a@example.com`
 2. **Wards tab**: Delete your real rows. Add 2–3 placeholder rows
 3. **Schedule tab**: Delete all rows below the header
@@ -184,4 +167,4 @@ That's it.
 
 ## Optional: Set up the swap request form
 
-See [docs/setup-guide.md](setup-guide.md#step-9----set-up-the-swap-request-form-optional-10-minutes) — the process is the same for developers as for end users.
+Same as end users — click **Fourth Sunday → Set Up Swap Form**. The script creates and configures the form automatically.

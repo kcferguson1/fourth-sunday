@@ -90,18 +90,26 @@ const STRINGS = {
       'Topic: {topicTitle}\n{scriptureRefs}\nBishop: {bishopName}',
 
     // ---- custom menu items ----
-    menuName:           'Fourth Sunday',
-    menuInstall:        'First-time Setup',
-    menuRunRollover:    'Run Rollover',
-    menuSendDigest:     'Send Digest Now',
-    menuTestReminder:   'Send Test Reminder Email',
-    menuApproveSwaps:   'Approve Pending Swaps',
+    menuName:              'Fourth Sunday',
+    menuInstall:           'First-time Setup',
+    menuSetUpSwapForm:     'Set Up Swap Form',
+    menuRunRollover:       'Run Rollover',
+    menuLockConfirmed:     'Lock Confirmed Rows',
+    menuSendDigest:        'Send Digest Now',
+    menuTestReminder:      'Send Test Reminder Email',
+    menuApproveSwaps:      'Approve Pending Swaps',
 
     // ---- UI alerts ----
     installComplete:
       'Setup complete.\n\n' +
       'Tabs created, topics loaded, and automatic reminders scheduled.\n\n' +
       'Next: fill in the Settings, Wards, and Speakers tabs, then click Fourth Sunday → Run Rollover.',
+    swapFormComplete:
+      'Swap form created and linked to this sheet.\n\n' +
+      'Form URL (share this with speakers):\n{formUrl}\n\n' +
+      'The URL has been saved to Settings → Swap Form URL automatically.',
+    lockConfirmedComplete:
+      'Locked {count} confirmed rows.',
     rolloverComplete:
       'Rollover complete. Review the Schedule tab and lock rows you want to keep.',
     rolloverNoData:
@@ -150,8 +158,12 @@ const STRINGS = {
     calendarEventDescription: 'TODO: translate calendarEventDescription',
     menuName:                 'Cuarto Domingo',
     menuInstall:              'Configuración Inicial',
-    installComplete:          'TODO: translate installComplete',
+    menuSetUpSwapForm:        'Configurar Formulario de Cambio',
     menuRunRollover:          'Generar Rotación',
+    menuLockConfirmed:        'Bloquear Filas Confirmadas',
+    installComplete:          'TODO: translate installComplete',
+    swapFormComplete:         'TODO: translate swapFormComplete',
+    lockConfirmedComplete:    'TODO: translate lockConfirmedComplete',
     menuSendDigest:           'Enviar Resumen Ahora',
     menuTestReminder:         'Enviar Correo de Prueba',
     menuApproveSwaps:         'Aprobar Cambios Pendientes',

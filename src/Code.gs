@@ -15,13 +15,16 @@ function onOpen() {
   const s = getStrings();
   SpreadsheetApp.getUi()
     .createMenu(s.menuName)
-    .addItem(s.menuInstall,       'runInstall')
+    .addItem(s.menuInstall,          'runInstall')
+    .addItem(s.menuSetUpSwapForm,    'createSwapForm')
     .addSeparator()
-    .addItem(s.menuRunRollover,   'menuRunRollover')
-    .addItem(s.menuSendDigest,    'menuSendDigest')
-    .addItem(s.menuTestReminder,  'menuTestReminder')
+    .addItem(s.menuRunRollover,      'menuRunRollover')
+    .addItem(s.menuLockConfirmed,    'lockConfirmedRows')
     .addSeparator()
-    .addItem(s.menuApproveSwaps,  'menuApproveSwaps')
+    .addItem(s.menuSendDigest,       'menuSendDigest')
+    .addItem(s.menuTestReminder,     'menuTestReminder')
+    .addSeparator()
+    .addItem(s.menuApproveSwaps,     'menuApproveSwaps')
     .addToUi();
 }
 
