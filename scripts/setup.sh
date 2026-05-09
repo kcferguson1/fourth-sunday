@@ -49,13 +49,20 @@ else
   ok "clasp $(clasp --version 2>/dev/null | head -1 | tr -d '\n')"
 fi
 
-# ── 3. Log in if needed ───────────────────────────────────────────────────────
-if [ ! -f "$HOME/.clasprc.json" ] || ! grep -q '"access_token"' "$HOME/.clasprc.json" 2>/dev/null; then
+# ── 3. Verify clasp login (token may exist but be expired) ───────────────────
+_verify_clasp_login() {
+  clasp list &>/dev/null
+}
+
+if ! _verify_clasp_login; then
   echo ""
   info "Logging into clasp — a browser window will open."
   info "Sign in with the Google account that will own the sheet, then return here."
   echo ""
   clasp login
+  if ! _verify_clasp_login; then
+    fail "clasp login failed or timed out. Re-run this script and try again."
+  fi
 fi
 ok "Logged into clasp"
 
@@ -84,8 +91,14 @@ cd "$SRC_DIR"
 # clasp create outputs lines like:
 #   Created new Google Sheets script: https://script.google.com/d/SCRIPT_ID/edit
 #   Spreadsheet: https://docs.google.com/spreadsheets/d/SHEET_ID/edit
+set +e
 CLASP_OUTPUT=$(clasp create --type sheets --title "Fourth Sunday — Working Copy" 2>&1)
+CLASP_EXIT=$?
+set -e
 echo "$CLASP_OUTPUT"
+if [ $CLASP_EXIT -ne 0 ]; then
+  fail "clasp create failed (exit $CLASP_EXIT). Check the output above.\nCommon fix: run  clasp login  then re-run this script."
+fi
 
 # Extract spreadsheet URL from output
 SHEET_URL=$(echo "$CLASP_OUTPUT" | grep -o 'https://docs.google.com/spreadsheets/d/[^[:space:]]*' | head -1)
