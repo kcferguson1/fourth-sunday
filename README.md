@@ -20,13 +20,21 @@ Everything lives in Google Workspace tools you already have. No servers, no subs
 
 ---
 
-## Five-minute setup
+## Setup
+
+**For exec secs adopting the tool:** see the [setup guide](docs/setup-guide.md) — no technical background required, about 30 minutes.
+
+**For developers creating the template sheet for the first time:** see the [developer setup guide](docs/developer-setup.md) — covers clasp, pushing the code, and publishing the public template.
+
+---
+
+## Five-minute overview
 
 **What you need:** a Google account with Google Sheets and Gmail access.
 
 ### Step 1 — Copy the template sheet
 
-1. Open the [template sheet](https://docs.google.com/spreadsheets/d/TEMPLATE_ID_HERE) (link updated after release)
+1. Open the [template sheet](https://docs.google.com/spreadsheets/d/TEMPLATE_ID_HERE) (link live after initial developer setup)
 2. **File → Make a copy** — save it to your Drive
 3. Name it something like `Stake Speaking Schedule 2026`
 
