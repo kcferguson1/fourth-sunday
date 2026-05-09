@@ -2,7 +2,7 @@
 
 Everything you need to get Fourth Sunday running for your stake. No technical background required.
 
-Total time: about 30 minutes.
+Total time: about 20 minutes.
 
 ---
 
@@ -122,29 +122,31 @@ Add one row per stake council member who speaks at 4th Sunday sacrament meetings
 
 ---
 
-## Step 5 — Authorize the script (2 minutes)
+## Step 5 — Run First-time Setup (2 minutes)
 
-The script needs permission to send emails on your behalf. This is a one-time step.
+This one click authorizes the script, creates the required tabs, and schedules automatic reminders — all at once.
 
-1. Look at the menu bar at the top of the sheet. You should see a **Fourth Sunday** menu. Click it.
+1. Look at the menu bar at the top of the sheet. Click **Fourth Sunday**.
 
-   *If you don't see a Fourth Sunday menu: click the menu bar and wait a few seconds — it sometimes takes a moment to load after copying. If it still doesn't appear, go to Extensions → Apps Script and click the Run button on any function.*
+   *If you don't see a Fourth Sunday menu: wait a few seconds and try again — it sometimes takes a moment to load. If it still doesn't appear, reload the page.*
 
-2. Click **Run Rollover**
+2. Click **First-time Setup**
 
-3. A pop-up will appear: "Authorization required." Click **Continue.**
+3. A pop-up appears: "Authorization required." Click **Continue.**
 
 4. Choose your Google account.
 
-5. You'll see a screen that says **"Google hasn't verified this app"** with a warning. This is normal — it appears for any private Google script that hasn't been published to the Google Marketplace. It is safe to proceed.
+5. You'll see a screen that says **"Google hasn't verified this app."** This is normal — it appears for any private Google script that hasn't been submitted to the Google Marketplace. It is safe to proceed.
 
-   Click **Advanced** (small text at the bottom left of that screen).
+   Click **Advanced** (small text at the bottom left).
 
-   Then click **Go to Fourth Sunday (unsafe)** — the word "unsafe" is Google's standard disclaimer for unverified apps, not a warning about this specific script.
+   Then click **Go to Fourth Sunday (unsafe)** — the word "unsafe" is Google's standard disclaimer for private scripts, not a warning about this one specifically.
 
-6. Review the permissions and click **Allow**.
+6. Click **Allow**.
 
-You're back in the sheet. The authorization is saved — you won't need to do this again.
+7. You're back in the sheet. Wait about 15 seconds. A confirmation message appears: "Setup complete."
+
+The script is now authorized and reminders are scheduled. You won't need to do this again.
 
 ---
 
@@ -177,48 +179,15 @@ If the email doesn't arrive:
 
 ---
 
-## Step 8 — Set up automatic reminders and digest (5 minutes)
+## Step 8 — Schedule automatic reminders and digest (30 seconds)
 
-This step tells Google to run the script automatically — sending reminders and your weekly digest without you having to do anything.
+**Fourth Sunday → First-time Setup**
 
-1. In the sheet: click **Extensions → Apps Script**
+That's it. The setup runs for about 15 seconds and then shows a confirmation message. It schedules:
+- A daily check at 6am that sends reminder emails to speakers 21 days before their assignment
+- A Monday morning digest emailed to you with the next 60 days of assignments
 
-   A new browser tab opens with the script editor. (You don't need to read or change anything here — just use the menus.)
-
-2. In the left sidebar, look for a **clock icon** (it's labeled "Triggers" if you hover over it). Click it.
-
-3. Click the blue **+ Add Trigger** button in the bottom-right corner.
-
-4. A form appears. Fill it in exactly like this:
-
-   | Field | Select |
-   |-------|--------|
-   | Choose which function to run | `runDailyJobs` |
-   | Choose which deployment should run | `Head` |
-   | Select event source | `Time-driven` |
-   | Select type of time based trigger | `Day timer` |
-   | Select time of day | `6am to 7am` |
-
-   Click **Save**.
-
-5. Click **+ Add Trigger** again. Fill it in:
-
-   | Field | Select |
-   |-------|--------|
-   | Choose which function to run | `runWeeklyDigest` |
-   | Choose which deployment should run | `Head` |
-   | Select event source | `Time-driven` |
-   | Select type of time based trigger | `Week timer` |
-   | Select day of week | `Monday` |
-   | Select time of day | `7am to 8am` |
-
-   Click **Save**.
-
-6. Close the Apps Script tab and go back to your sheet.
-
-The script will now:
-- Check every morning at 6am for upcoming assignments and send reminder emails to speakers 21 days out
-- Email you every Monday with a digest of the next 60 days
+*Note: If you already clicked First-time Setup back in Step 5 during authorization, you can skip this step — it's already done.*
 
 ---
 

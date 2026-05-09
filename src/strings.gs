@@ -91,12 +91,17 @@ const STRINGS = {
 
     // ---- custom menu items ----
     menuName:           'Fourth Sunday',
+    menuInstall:        'First-time Setup',
     menuRunRollover:    'Run Rollover',
     menuSendDigest:     'Send Digest Now',
     menuTestReminder:   'Send Test Reminder Email',
     menuApproveSwaps:   'Approve Pending Swaps',
 
     // ---- UI alerts ----
+    installComplete:
+      'Setup complete.\n\n' +
+      'Tabs created, topics loaded, and automatic reminders scheduled.\n\n' +
+      'Next: fill in the Settings, Wards, and Speakers tabs, then click Fourth Sunday → Run Rollover.',
     rolloverComplete:
       'Rollover complete. Review the Schedule tab and lock rows you want to keep.',
     rolloverNoData:
@@ -144,6 +149,8 @@ const STRINGS = {
     calendarEventTitle:       'TODO: translate calendarEventTitle',
     calendarEventDescription: 'TODO: translate calendarEventDescription',
     menuName:                 'Cuarto Domingo',
+    menuInstall:              'Configuración Inicial',
+    installComplete:          'TODO: translate installComplete',
     menuRunRollover:          'Generar Rotación',
     menuSendDigest:           'Enviar Resumen Ahora',
     menuTestReminder:         'Enviar Correo de Prueba',
