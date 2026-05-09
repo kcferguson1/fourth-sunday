@@ -15,6 +15,8 @@ function onOpen() {
   const s = getStrings();
   SpreadsheetApp.getUi()
     .createMenu(s.menuName)
+    .addItem(s.menuInstall,       'runInstall')
+    .addSeparator()
     .addItem(s.menuRunRollover,   'menuRunRollover')
     .addItem(s.menuSendDigest,    'menuSendDigest')
     .addItem(s.menuTestReminder,  'menuTestReminder')
